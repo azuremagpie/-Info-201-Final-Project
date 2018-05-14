@@ -35,7 +35,7 @@
 
 **Data wrangling:** The dataset will be split into 2 subdataset, one for the Offical and one for the SPM. The main goal of data wrangling is to find out 
 
-**New libraries used for this project:** Plotly
+**New libraries used for this project:** Plotly to make interactive choropleth map.
 
 **Anticipated major challenges:** 
 - Removing the special characters from the dataset might be challenging. 
