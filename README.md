@@ -26,6 +26,11 @@
   
   6. How many states have poverty level below national average?
   
+  7. Which states have poverty level measurements that are surprising? 
+  
+  8. What other datasets could be used to further explore other factors that are
+  influencing the differences in poverty levels?
+  
 
 # Technical Description
 
@@ -33,13 +38,14 @@
 
 **Data cleaning:** Renaming columns so every column has its name, and which columns are numeric data for the Official, and which are for the SPM. A few special characters included in the dataset will also by removed, so the data will be pure numbers.
 
-**Data wrangling:** The dataset will be split into 2 subdataset, one for the Offical and one for the SPM. The main goal of data wrangling is to find out 
+**Data wrangling:** The dataset will be split into 2 subdataset, one for the Offical and one for the SPM.   The main goal of data wrangling is to find out 
 
 **New libraries used for this project:** Plotly to make interactive choropleth map.
 
 **Anticipated major challenges:** 
 - Removing the special characters from the dataset might be challenging. 
 - Making the interactive map for the dataset. 
+- Since the csv file is not laid out such that we can instantly start data wrangling, we will need to first split up both datasets, select the columns which we will need, and rename the columns according to what will work best for us.
 
 
 
