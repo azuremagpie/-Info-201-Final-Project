@@ -11,7 +11,7 @@
 
 - The dataset was taken from the US Census Bureau report: The Supplemental Poverty Measure 2016. 
 
-- Target audience: The general public who may or maynot be familiar with different poverty measurements.
+- Target audience: The general public who may or maynot be familiar with different poverty measurements. While anyone could be interested in this dataset, people who live in the US are our main target audience. 
 
 - Specific questions to be answered by the dataset:
   1. How is poverty level for each state different when using the Official Poverty Measure (Official), versus using the Supplemental Poverty Measure (SPM)?
@@ -38,14 +38,16 @@
 
 **Data cleaning:** Renaming columns so every column has its name, and which columns are numeric data for the Official, and which are for the SPM. A few special characters included in the dataset will also by removed, so the data will be pure numbers.
 
-**Data wrangling:** The dataset will be split into 2 subdataset, one for the Offical and one for the SPM.   The main goal of data wrangling is to find out 
+**Data wrangling:** The dataset will be split into 2 subdataset, one for the Offical and one for the SPM.   The main goal of data wrangling is to provide more in depth information about poverty levels in the US states.  
 
-**New libraries used for this project:** Plotly to make interactive choropleth map.
+**New libraries used for this project:** Plotly to make interactive choropleth map. Dplyr to use proper functions. 
 
 **Anticipated major challenges:** 
 - Removing the special characters from the dataset might be challenging. 
 - Making the interactive map for the dataset. 
 - Since the csv file is not laid out such that we can instantly start data wrangling, we will need to first split up both datasets, select the columns which we will need, and rename the columns according to what will work best for us.
+-While making the interactive map, creating the most appropriate chart form to efficiently display the data.
+- Choosing relevent information. 
 
 
 
