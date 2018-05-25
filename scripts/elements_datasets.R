@@ -31,5 +31,6 @@ for (i in 1:nrow(additions_average_2015_2016)) {
                                                               digits = 2)
   }
 }
-View(average_2015_2016)  #Use this dataframe to create reactive histogram
-write.csv(average_2015_2016, file = "average.csv")
+View(additions_average_2015_2016)  #Use this dataframe to create reactive histogram
+write.csv(additions_average_2015_2016,
+          file = "additions_average_2015_2016.csv")
