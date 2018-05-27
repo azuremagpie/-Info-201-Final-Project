@@ -37,6 +37,7 @@ write.csv(additions_average_2015_2016,
 
 
 #Working with the subtraction datasets:
+#Convert subtraction_2015 and subtraction_2016 into numeric data
 subtraction_2015 <- read.csv("Subtraction_2015.csv", stringsAsFactors = F)
 data_3 <- data.frame(lapply(subtraction_2015[,-1], as.numeric))
 rownames(data_3) <- as.vector(subtraction_2015[1:5, 1])
@@ -47,6 +48,9 @@ data_4 <- data.frame(lapply(subtraction_2016[,-1], as.numeric))
 rownames(data_4) <- as.vector(subtraction_2016[1:5, 1])
 write.csv(data_4, file = "subtraction_2016_v2.csv")
 
+#Create a dataframe that contains the average
+#of each subtraction categories in 2015-2016.
+#Dataframe is created from data_3 and data_4
 subtraction_average_2015_2016 <- data.frame(matrix(ncol = ncol(data_3), 
                                                  nrow = nrow(data_3)))
 colnames(subtraction_average_2015_2016) <- colnames(data_3)
