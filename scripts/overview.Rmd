@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-author: "Gg"
+author: "Gg, Honie, Val"
 date: "May 27, 2018"
 output: pdf_document
 ---
