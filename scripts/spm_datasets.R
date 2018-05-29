@@ -1,5 +1,6 @@
 library(dplyr)
 library(stringr)
+library(plotly)
 
 #Convert csv to a usable dataframe
 spm_2016 <- read.csv("../data/spm_2016.csv", stringsAsFactors = F)
@@ -53,13 +54,8 @@ SPM_top_five <- SPM_above_nation_average[1:5, ]
 colnames(SPM_top_five)[2] <- "Percent Estimate"
 
 #Test out the histogram for the SPM_top_five table
-ggplot(data = SPM_top_five, aes(x = State, y = SPM_top_five[2])) +
-  geom_bar(stat = "identity", fill = "pink") +
-  xlab("States") +
-  ylab("Percent Estimate") +
-  ggtitle("Top 5 states with highest poverty level")
 
-plot_ly(data, x = ~State, y = ~`Percent Estimate`, 
+plot_ly(SPM_top_five, x = ~State, y = ~`Percent Estimate`, 
              type = 'bar', text = text,
              marker = list(color = 'rgb(158,202,225)',
                            line = list(color = 'rgb(8,48,107)',

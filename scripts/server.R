@@ -1,15 +1,15 @@
 library(shiny)
 library(plotly)
 library(ggplot2)
+library(knitr)
 source("spm_datasets.R", local = TRUE)
 
 shinyServer(function(input, output) {
   
   #Render for the first tab
   output$top_five <- renderPlot({
-    #Data widget
     data <- input$top_five_data
-    
+  
     top_five_hist <- plot_ly(data, x = ~State, 
                              y = ~`Percent Estimate`, 
             type = 'bar', text = text,

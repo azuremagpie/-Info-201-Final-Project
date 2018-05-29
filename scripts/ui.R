@@ -1,5 +1,7 @@
 library(shiny)
 library(shinythemes)
+library(markdown)
+source("spm_datasets.R", local = TRUE)
 
 ui <- navbarPage(theme = shinytheme("superhero"),
   title = "Poverty levels across all US States",
@@ -11,7 +13,8 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                              "Supplemental Poverty Measurement" = "SPM_top_five"))
              ),
              mainPanel(     
-               h4("This app shows descriptive graphs about poverty level in the US")
+               h4("This app shows descriptive graphs about poverty level in the US"),
+               includeMarkdown("overview.rmd")
              )
            )
   ),
