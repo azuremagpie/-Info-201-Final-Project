@@ -47,5 +47,8 @@ SPM_percent_states_above_average <-
 
 #Official: Top 5 states in poverty
 Official_top_five <- Official_above_nation_average[1:5, ]
+colnames(Official_top_five)[2] <- "Official Percent Estimate"
 #SPM: Top 5 states in poverty
 SPM_top_five <- SPM_above_nation_average[1:5, ]
+colnames(SPM_top_five)[2] <- "SPM Percent Estimate"
+
