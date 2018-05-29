@@ -6,7 +6,9 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   tabPanel("About this app",
            sidebarLayout(   
              sidebarPanel(
-               #Put widgets here
+               selectInput("top_five_data", "Select the measurement",
+                           c("Official Poverty Measurement" = "Official_top_five",
+                             "Supplemental Poverty Measurement" = "SPM_top_five"))
              ),
              mainPanel(     
                h4("This app shows descriptive graphs about poverty level in the US")
