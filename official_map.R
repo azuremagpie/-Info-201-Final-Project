@@ -10,14 +10,15 @@ library(lintr)
   
 # Load the raw data
   raw_data <- read.csv("data/spm_2016.csv", stringsAsFactors = FALSE)
-  official_data <- read.csv("data/official-percentage.csv", stringsAsFactors = FALSE)
+  official_data <- read.csv("data/official-percentage.csv", 
+                            stringsAsFactors = FALSE)
   
   total_data <- official_data %>%
     mutate(raw_data$State) 
   
   colnames(total_data)[4] <- "state"
   
-# Interactive map  
+# Map Projections
   g <- list(
     scope = "usa",
     projection = list(type = "albers usa"),
@@ -29,21 +30,15 @@ library(lintr)
     countrycolor = toRGB("white")
   )
   
-  total_data$df <- with(total_data, paste(
-    total_data$state, "<br />",
-    "Official Percent Estimate: ", total_data$official, "<br />"
+  total_data$hover <- with(total_data, paste(
+    state, "<br>",
+    "Official Percent Estimate: ", official, "<br>"
   ))
   
-  plot <- plot_geo(total_data, locationmode = "USA-states", sizes = c(1, 250)) %>%
-    add_markers(
-      x = total_data$long, y = total_data$lat, size = total_data$official, color =
-        "grey", text = total_data$df
-    ) %>%
+  plot <- plot_geo(
+    total_data, locationmode = "USA-states") %>%
+    add_trace(
+      x = total_data$long, y = total_data$lat, text = total_data$hover, 
+      size = total_data$official, color = "grey") %>%
     layout(title = "Official Percent Estimate", geo = g)
   
-  
-  
-  
-  
- # Write a CSV file containing raw_data to the working directory
-  #write.csv(data, "data/official-percentage.csv", row.names = FALSE)

@@ -3,7 +3,7 @@ title: "Choropleth Maps"
 author: "Honie Moon"
 date: "5/28/2018"
 output: html_document
-runtime: shiny
+#runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
