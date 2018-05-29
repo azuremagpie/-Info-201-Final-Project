@@ -1,6 +1,14 @@
 library(shiny)
+library(plotly)
+library(tidyverse)
+library(ggplot2)
+library(shinythemes)
 
-add_average <- add_average
+# barchart <- ggplot(data = add_average, aes(x = X, y = All.people.Estimate)) + 
+#   geom_bar(stat="identity") +  coord_flip()
+
+barplot(add_average$All.people.Estimate, names.arg = add_average$X, horiz = TRUE,
+        las = 1)
 
 my_ui <- fluidPage(
   sidebarLayout(
@@ -37,7 +45,5 @@ my_server <- function(input, output) {
   })        
   
 }
-
-barplot(as.matrix(add_average))
 
 shinyApp(ui = my_ui, server = my_server)
