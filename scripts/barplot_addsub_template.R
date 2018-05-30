@@ -4,6 +4,10 @@ library(tidyverse)
 library(ggplot2)
 library(shinythemes)
 
+add_average <- read.csv("../data/additions_average_2015_2016.csv")
+subtract_average <- read.csv("../data/subtraction_average_2015_2016_v2.csv")
+
+
 my_ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
@@ -31,20 +35,22 @@ my_ui <- fluidPage(
   )
 )
 
-
-
-
 my_server <- function(input, output) {
   
   output$bar <- renderPlot({
+    par(mar = c(5.1,10.1,4.1,2.1))
     bar1 <- tapply(add_average[,input$addition], add_average$X, mean)
-    barplot(bar1, xlab = "X axis", main = "Additions Average", horiz = TRUE,
-            las = 1, col = " light blue" )
+    barplot(bar1, xlab = "Decrease in number of people in poverty",
+            ylab = "Elements",
+            main = "Additions Average", horiz = TRUE,
+            las = 1, col = rainbow(12), cex.names = 0.7)
   })        
   output$bar2 <- renderPlot({
+    par(mar = c(5.1,10.1,4.1,2.1))
     bar2 <- tapply(subtract_average[,input$subtraction], subtract_average$X, mean)
-    barplot(bar2, xlab = "X axis", main = "Subtraction Average", horiz = TRUE,
-            las = 1, col = "light blue")
+    barplot(bar2, xlab = "Increase in number of people in poverty",
+            ylab = "Elements",  main = "Subtraction Average", horiz = TRUE,
+            las = 1, col = rainbow(5), cex.names = 0.7)
   })
 }
 

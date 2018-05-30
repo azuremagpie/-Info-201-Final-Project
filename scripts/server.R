@@ -1,25 +1,41 @@
 library(shiny)
 library(plotly)
 library(ggplot2)
+<<<<<<< HEAD
 source("spm_datasets.R", local = TRUE)
 source("maps.R", local = TRUE)
+=======
+library(knitr)
+source("spm_datasets.R", local = FALSE)
+>>>>>>> 9976c220c62a1b8aa16c204bec2ca0767cb42601
 
 shinyServer(function(input, output) {
   
   #Render for the first tab
-  output$top_five <- renderPlot({
-    #Data widget
-    data <- input$top_five_data
-    
-    top_five_hist <- plot_ly(data, x = ~State, 
-                             y = ~`Percent Estimate`, 
-            type = 'bar', text = text,
-            marker = list(color = 'rgb(158,202,225)',
-                          line = list(color = 'rgb(8,48,107)',
-                                      width = 1.5))) %>%
-      layout(title = "States with top 5 highest poverty level",
-             xaxis = list(title = "States"),
-             yaxis = list(title = "Percent Estimate"))
+  
+  
+  data2 <- function() {
+   if(input$top_five_input == 'Official_top_five') {
+     return(Official_top_five)
+   } else {
+     return(SPM_top_five)
+   }
+  }
+  
+  output$top_five_output <- renderPlot({
+    title <- function() {
+      if(input$top_five_input == 'Official_top_five') {
+        return("Top 5 states with highest poverty level")
+      } else {
+        return(SPM_top_five)
+      }
+    }
+      
+    top_five_hist <- ggplot(data = data2(),
+                            aes(x = State, y = `Percent Estimate`)) +
+      geom_bar(stat = "identity", fill = "pink") +
+      xlab("States") +
+      ylab("Percent Estimate")
     top_five_hist
   })
   
