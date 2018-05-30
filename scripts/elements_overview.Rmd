@@ -16,4 +16,3 @@ Addition Elements are factors that **increase the resource** of a family or sing
 
 Subtraction Elements are factors that **decrease the resouce** of a family or single individual (i.e *subtract money from the available resource*), thus **decrease the number of people in poverty.**
 
-####Descriptive graphs of the effects of individual elements on the number of people in poverty
