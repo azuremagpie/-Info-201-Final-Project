@@ -15,14 +15,15 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                includeHTML("overview.html")
              )
            )
+           
   ),
   tabPanel("Explore the poverty levels across all US States",
            sidebarLayout(
              sidebarPanel(
                textInput("state_names", 
-                         "Enter state names, capitalize first letter",
+                         "Enter state names, capitalize first letter. Then click enter",
                          value = "Washington"),
-               selectInput("top_input", "Select the measurement for the histogram",
+               selectInput("top_input", "Select the measurement",
                            c("Official Poverty Measurement" = "Official",
                              "Supplemental Poverty Measurement" = "SPM")
                ),
@@ -36,29 +37,12 @@ ui <- navbarPage(theme = shinytheme("superhero"),
              mainPanel(
                tableOutput("state_percent"),
                textOutput("average"),
-               plotOutput("top_output"),
-               plotlyOutput("map")
+               plotOutput("top_output")
              )
            )
            
   ),
- #HEAD
-  tabPanel("Histograms",
-
-  # tabPanel("Interactive Maps",
-  #          sidebarLayout(
-  #             sidebarPanel(
-  #            #   selectInput("map_data", "Choose which map to view",
-  #            #               c("Official Percent Estimate" = "offic_perc",
-  #            #                 "SPM Percent Estimate" = "spm_perc"))
-  #             ),
-  #            mainPanel(
-  #              plotlyOutput("map")
-  #            )
-  #          )
-  # ),
   tabPanel("Factors included in the SPM that influence Poverty Level",
-#>>>>>>> 93c263016c986052097b1afec6559aba471905c8
            sidebarLayout(
              sidebarPanel(
                h3("Addition"),
@@ -84,7 +68,7 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                plotOutput("bar2")          
                )
            )
-)))
-
+  )
+)
 
 shinyUI(ui)
