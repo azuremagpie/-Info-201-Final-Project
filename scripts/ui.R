@@ -53,10 +53,26 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   tabPanel("Histograms",
            sidebarLayout(
              sidebarPanel(
-               #Put widgets here (VAL!!!!!!!!)
+               h3("Addition"),
+               selectInput("addition", "Select population to view", 
+                           c("All.people.Estimate",
+                             "Under.18.years.Estimate",
+                             "X18.to.64.years.Estimate",
+                             "X65.years.and.over.Estimate"),  
+                           selected = "All.people.Estimate"
+               ),
+               h3("Subtraction"),
+               selectInput("subtraction", "Select population to view", 
+                           c("All.people.Estimate",
+                             "Under.18.years.Estimate",
+                             "X18.to.64.years.Estimate",
+                             "X65.years.and.over.Estimate"),
+                           selected = "All.people.Estimate"
+               )
              ),
              mainPanel(
-               #Put the plots here
+               plotOutput("bar"),
+               plotOutput("bar2")
              )
            )
   )
