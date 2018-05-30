@@ -51,36 +51,21 @@ shinyServer(function(input, output) {
   })
   
 # Render the interactive map for the "Interactive Map" tab
-output$map <- renderPlotly({
-  map_title <- function() {
-    if(input$map_data == "offic_perc") {
-      return("Official Poverty Measurement")
-    } else {
-      return("Supplemental Poverty Measurment")
-    }
-  }
-    g <- list(
-      scope = "usa",
-      projection = list(type = "albers usa"),
-      showland = TRUE,
-      lakecolor = toRGB("white")
-    )
+# output$map <- renderPlotly({
+#   if(input$map_data == "offic_perc") {
+#     return (build_offic_map())
+#   } else{
+#     return (build_spm_map())
+#   } 
+# })
 
-    plot_ly(locations = total_data$state,
-            z = total_data[, input$map_title],
-            color = total_data[, input$map_data],
-            type = "choropleth",
-            locationmode = "USA-states"
-    ) %>%
-      layout(geo = g)
-})
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
   #Render the histogram for the "Histogram" tab
-=======
+#=======
   
   #Render the histogram for the third tab
->>>>>>> 93c263016c986052097b1afec6559aba471905c8
+#>>>>>>> 93c263016c986052097b1afec6559aba471905c8
   output$bar <- renderPlot({
     par(mar = c(12.1,10.1,4.1,2.1), mgp = c(8,1,0))
     bar1 <- tapply(add_average[,input$addition], add_average$X, mean)

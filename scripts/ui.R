@@ -2,20 +2,21 @@ library(shiny)
 library(shinythemes)
 library(markdown)
 library(plotly)
+source("spm_datasets.R")
+source("maps.R")
 
 ui <- navbarPage(theme = shinytheme("superhero"),
   title = "Poverty levels across all US States",
   tabPanel("About this app",
            sidebarLayout(
              sidebarPanel(
-               
              ), 
              mainPanel(
-               h4("Overview"),
-               includeHTML("overview.html")
+               h4("Overview")
+               #includeHTML("overview.html")
              )
            )
-  ),
+),
   tabPanel("Explore the poverty levels across all US States",
            sidebarLayout(
              sidebarPanel(
@@ -25,28 +26,25 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                ),
                numericInput("num", "Number of states to view:",
                             value = 4, min = 3, max = 10),
-               selectInput("map_data", "Choose which map to view",
+                selectInput("map_data", "Choose which map to view",
                            c("Official Percent Estimate" = "offic_perc",
                             "SPM Percent Estimate" = "spm_perc")
                )
-             ), 
+             ),
              mainPanel(
                textOutput("average"),
                plotOutput("top_output"),
                plotlyOutput("map")
              )
            )
-           
+
   ),
-<<<<<<< HEAD
-  tabPanel("Histograms",
-=======
   # tabPanel("Interactive Maps",
   #          sidebarLayout(
   #             sidebarPanel(
-  #            #   selectInput("map_data", "Choose which map to view",
-  #            #               c("Official Percent Estimate" = "offic_perc",
-  #            #                 "SPM Percent Estimate" = "spm_perc"))
+  #               selectInput("map_data", "Choose which map to view",
+  #                           c("Official Percent Estimate" = "offic_perc",
+  #                             "SPM Percent Estimate" = "spm_perc"))
   #             ),
   #            mainPanel(
   #              plotlyOutput("map")
@@ -54,19 +52,18 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   #          )
   # ),
   tabPanel("Factors included in the SPM that influence Poverty Level",
->>>>>>> 93c263016c986052097b1afec6559aba471905c8
            sidebarLayout(
              sidebarPanel(
                h3("Addition"),
-               selectInput("addition", "Select population to view", 
+               selectInput("addition", "Select population to view",
                            c("All age group" = "All.people.Estimate",
                              "Under 18 years old" = "Under.18.years.Estimate",
                              "18 to 64 years old" = "X18.to.64.years.Estimate",
-                             "65 years old and over" = "X65.years.and.over.Estimate"),  
+                             "65 years old and over" = "X65.years.and.over.Estimate"),
                            selected = "All age group"
                ),
                h3("Subtraction"),
-               selectInput("subtraction", "Select population to view", 
+               selectInput("subtraction", "Select population to view",
                            c("All age group" = "All.people.Estimate",
                              "Under 18 years old" = "Under.18.years.Estimate",
                              "18 to 64 years old" = "X18.to.64.years.Estimate",
@@ -75,12 +72,12 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                )
              ),
              mainPanel(
-               includeHTML("elements_overview.html"),
+              # includeMarkdown("elements_overview.Rmd"),
                plotOutput("bar"),
-               plotOutput("bar2")          
+               plotOutput("bar2")
                )
            )
-  )
 )
-
+)
+  
 shinyUI(ui)
