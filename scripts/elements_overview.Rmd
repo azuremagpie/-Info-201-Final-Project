@@ -2,17 +2,17 @@
 
 ---
 
-#Additions and Subtraction Elements
+# Additions and Subtraction Elements
 
 For the Supplemental Poverty Measure, the US Census have factored in key elements that supposedly influence the increase/decrease in the number of people in poverty. These elements are divided into 2 categories: 
 * Addition Elements
 * Subtraction Elements
 
-###Addition Elements
+### Addition Elements
 
 Addition Elements are factors that **increase the resource** of a family or single individual (i.e *put additional money to the available resource*), thus **decrease the number of people in poverty.**
 
-###Subtraction Elements
+### Subtraction Elements
 
 Subtraction Elements are factors that **decrease the resouce** of a family or single individual (i.e *subtract money from the available resource*), thus **decrease the number of people in poverty.**
 

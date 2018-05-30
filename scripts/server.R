@@ -3,6 +3,7 @@ library(plotly)
 library(ggplot2)
 library(knitr)
 source("spm_datasets.R", local = FALSE)
+source("maps.R", local = F)
 
 shinyServer(function(input, output) {
   
@@ -56,23 +57,14 @@ shinyServer(function(input, output) {
     top_hist
   })
   
-  #Render the interactive map for the "Interactive Map" tab
-# output$map <- renderPlotly({
-#     g <- list(
-#       scope = "usa",
-#       projection = list(type = "albers usa"),
-#       showland = TRUE,
-#       lakecolor = toRGB("white")
-#     )
-# 
-#     plot_ly(locations = total_data$state,
-#             z = total_data[,input$map_data],
-#             color = total_data[,input$map_data],
-#             type = "choropleth",
-#             locationmode = "USA-states"
-#     ) %>%
-#       layout(geo = g)
-# })
+  #Render the interactive map
+  output$map <- renderPlotly({
+    if(input$map_data == "offic_perc") {
+      return (build_offic_map())
+    } else{
+      return (build_spm_map())
+    } 
+  })
 
   
   #Render the histogram for the third tab

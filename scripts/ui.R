@@ -3,7 +3,7 @@ library(shinythemes)
 library(markdown)
 library(plotly)
 
-ui <- navbarPage(theme = shinytheme("superhero"),
+ui <- navbarPage(theme = shinytheme("cosmo"),
   title = "Poverty levels across all US States",
   tabPanel("About this app",
            sidebarLayout(
@@ -12,7 +12,7 @@ ui <- navbarPage(theme = shinytheme("superhero"),
              ), 
              mainPanel(
                h4("Overview"),
-               includeHTML("overview.html")
+               includeMarkdown("overview.rmd")
              )
            )
            
@@ -37,7 +37,8 @@ ui <- navbarPage(theme = shinytheme("superhero"),
              mainPanel(
                tableOutput("state_percent"),
                textOutput("average"),
-               plotOutput("top_output")
+               plotOutput("top_output"),
+               plotlyOutput("map")
              )
            )
            
@@ -63,7 +64,7 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                )
              ),
              mainPanel(
-               includeHTML("elements_overview.html"),
+               includeMarkdown("elements_overview.rmd"),
                plotOutput("bar"),
                plotOutput("bar2")          
                )

@@ -4,24 +4,24 @@
 
 This App shows data visualizations of the poverty levels across all US states, as well as of the elements that influence the increase/decrease of poverty level in 3 age groups. We show poverty levels measured by two different measurements: the Official Poverty Measurement (Official) and the Supplemental Poverty Measurement (SPM).
 
-#Brief background information of the two measurements
+# Brief background information of the two measurements
 * The Official Poverty Measurement (Official) was created in the 1960s and has remained largely unchanged. The Official determine poverty level by taking into account pretax income of a family or single unrelated invidividuals, then compare such income with the poverty threshold set for that size family. The poverty threshold sets by the Official is the cost of a nutritional food plan multiplied by three. This poverty threshold remains largely unchanged, except for adjustments for inflation [CITE].
 
 * The Supplemental Poverty Measurement (SPM) is released in 2009. The SPM takes into account pretax income, tax credits, and other non-cash benefits, such as food stamp, Earned Income Tax Credit, and other antipoverty programs. When calculating a family's resource, the SPM also subtract expenses (e.g tax liabilities, medical costs) from the family's income. The poverty threshold is calculated using expenditures data on food, clothing, housings, and utilities.
 
-<img src="../Pict/Summary.png" width="600">
+<center> <img src="../Pict/Summary.png" width="600"> </center>
 (Source: The Supplemental Poverty Measure, 2016)
 
-#Advantages and Disadvantages of each measurement
-##Official Poverty Measurement
-####Disadvantages
+# Advantages and Disadvantages of each measurement
+## Official Poverty Measurement
+#### Disadvantages
 * Only taking into account pretax income of a family and not the full resources
 
 * Using pretax income without subtracting tax liabilities. This leads to inaccurate measurement of a family's resource.
 
 
-##Supplemental Poverty Measurement
-####Advantages
+## Supplemental Poverty Measurement
+#### Advantages
 
 * Take into accounts anti-poverty programs to low-income individuals.
 
@@ -29,14 +29,14 @@ This App shows data visualizations of the poverty levels across all US states, a
 
 * Geographic adjustments: Taking into account differences in housing costs between places
 
-####Disadvantages
+#### Disadvantages
 People identified as "poor" by the SPM seem to be slightly more advantaged than the one identified in the Official. According to Meyer & Sullivan (2012), people identified as poor by the SPM "have higher consumption, are much less disadvantaged than the official poor: they have higher consumption, are much more likely to have private health insurance, are more likely to own a home and more likely to have private health insurance, are more likely to own a home and various appliances, are slightly more educated, and have accumulated more assets." (page 118). It is unclear whether the SPM 2016 report, from which we take the data, has corrected for this deficiency.
 
 Meyer and Sullivan proposed an explanation for this deficiency: By factoring in non-cash benefits, the SPM mistakenly categorized the better-off group as poor while leaving out the worse-off. For example, since the largest non-cash benefits are food stamps and Temporary Assistance for Needy Families, families who receive those benefits are categorized as "better-off", but in fact families receiving such benefits are among the worst-off. (page 127)
 
 
 
-####Citations
+#### Citations
 US Census Bureau. *How the U.S. Census Bureau Measures Poverty*, 1 Sept. 2017, www.census.gov/library/visualizations/2017/demo/poverty_measure-how.html.
 
 Meyer, Bruce D., and James X. Sullivan. 2012. "Identifying the Disadvantaged: Official Poverty, Consumption Poverty, and the New Supplemental Poverty Measure." *Journal of Economic Perspectives*, 26 (3): 111-36.
