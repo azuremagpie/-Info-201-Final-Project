@@ -71,9 +71,10 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                )
              ),
              mainPanel(
+               includeHTML("elements_overview.html"),
                plotOutput("bar"),
-               plotOutput("bar2")
-             )
+               plotOutput("bar2")          
+               )
            )
   )
 )
