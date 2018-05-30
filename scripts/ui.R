@@ -32,6 +32,7 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                )
              ), 
              mainPanel(
+               textOutput("average"),
                plotOutput("top_output")
              )
            )

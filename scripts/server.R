@@ -10,11 +10,25 @@ shinyServer(function(input, output) {
   #Render for the first tab
   data_used <- function() {
     if(input$top_input == "Official") {
+      national_average <- Official_national_average
       return(Official_above_nation_average)
     } else {
+      national_average <- SPM_national_average
       return(SPM_above_nation_average)
     }
   }
+  
+  output$average <- renderText({
+    national_average <- 0
+    if(input$top_input == "Official") {
+      national_average <- Official_national_average
+    } else {
+      national_average <- SPM_national_average
+    }
+    
+    paste0("The average poverty level of the United States is ",
+           national_average)
+  })
   
   output$top_output <- renderPlot({
     title <- function() {

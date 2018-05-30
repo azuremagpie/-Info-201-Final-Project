@@ -58,11 +58,11 @@ colnames(SPM_above_nation_average)[2] <- "Percent Estimate"
 colnames(Official_above_nation_average)[2] <- "Percent Estimate"
 
 #Test out the histogram for the SPM_top_five table
-title <- "Supplemental"
-ggplot(data = SPM_top_five,
-       aes(x = State, y = `Percent Estimate` )) +
-  geom_bar(stat = "identity", fill = "pink") +
-  xlab("States") +
-  ylab("Percent Estimate")+
-  ggtitle(paste0("blabla", title)) +
-  geom_text(aes(label=`Percent Estimate`))
+# title <- "Supplemental"
+# ggplot(data = SPM_top_five,
+#        aes(x = State, y = `Percent Estimate` )) +
+#   geom_bar(stat = "identity", fill = "pink") +
+#   xlab("States") +
+#   ylab("Percent Estimate")+
+#   ggtitle(paste0("blabla", title)) +
+#   geom_text(aes(label=`Percent Estimate`))
