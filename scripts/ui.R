@@ -38,9 +38,9 @@ ui <- navbarPage(theme = shinytheme("superhero"),
            )
            
   ),
-<<<<<<< HEAD
+ #HEAD
   tabPanel("Histograms",
-=======
+
   # tabPanel("Interactive Maps",
   #          sidebarLayout(
   #             sidebarPanel(
@@ -54,7 +54,7 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   #          )
   # ),
   tabPanel("Factors included in the SPM that influence Poverty Level",
->>>>>>> 93c263016c986052097b1afec6559aba471905c8
+#>>>>>>> 93c263016c986052097b1afec6559aba471905c8
            sidebarLayout(
              sidebarPanel(
                h3("Addition"),
@@ -80,7 +80,7 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                plotOutput("bar2")          
                )
            )
-  )
-)
+)))
+
 
 shinyUI(ui)
