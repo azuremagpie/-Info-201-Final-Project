@@ -3,7 +3,7 @@ library(plotly)
 library(ggplot2)
 library(knitr)
 source("spm_datasets.R", local = FALSE)
-#source("maps.R", local = FALSE)
+source("maps.R", local = FALSE)
 
 shinyServer(function(input, output) {
   
@@ -50,25 +50,31 @@ shinyServer(function(input, output) {
     top_hist
   })
   
-  #Render the interactive map for the "Interactive Map" tab
-# output$map <- renderPlotly({
-#     g <- list(
-#       scope = "usa",
-#       projection = list(type = "albers usa"),
-#       showland = TRUE,
-#       lakecolor = toRGB("white")
-#     )
-# 
-#     plot_ly(locations = total_data$state,
-#             z = total_data[,input$map_data],
-#             color = total_data[,input$map_data],
-#             type = "choropleth",
-#             locationmode = "USA-states"
-#     ) %>%
-#       layout(geo = g)
-# })
+# Render the interactive map for the "Interactive Map" tab
+output$map <- renderPlotly({
+  map_title <- function() {
+    if(input$map_data == "offic_perc") {
+      return("Official Poverty Measurement")
+    } else {
+      return("Supplemental Poverty Measurment")
+    }
+  }
+    g <- list(
+      scope = "usa",
+      projection = list(type = "albers usa"),
+      showland = TRUE,
+      lakecolor = toRGB("white")
+    )
 
-  
+    plot_ly(locations = total_data$state,
+            z = total_data[, input$map_title],
+            color = total_data[, input$map_data],
+            type = "choropleth",
+            locationmode = "USA-states"
+    ) %>%
+      layout(geo = g)
+})
+
   #Render the histogram for the "Histogram" tab
   output$bar <- renderPlot({
     par(mar = c(12.1,10.1,4.1,2.1), mgp = c(8,1,0))

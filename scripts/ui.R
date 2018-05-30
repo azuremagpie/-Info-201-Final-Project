@@ -15,7 +15,6 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                includeHTML("overview.html")
              )
            )
-           
   ),
   tabPanel("Explore the poverty levels across all US States",
            sidebarLayout(
@@ -33,23 +32,12 @@ ui <- navbarPage(theme = shinytheme("superhero"),
              ), 
              mainPanel(
                textOutput("average"),
-               plotOutput("top_output")
+               plotOutput("top_output"),
+               plotlyOutput("map")
              )
            )
            
   ),
-  # tabPanel("Interactive Maps",
-  #          sidebarLayout(
-  #             sidebarPanel(
-  #            #   selectInput("map_data", "Choose which map to view",
-  #            #               c("Official Percent Estimate" = "offic_perc",
-  #            #                 "SPM Percent Estimate" = "spm_perc"))
-  #             ),
-  #            mainPanel(
-  #              plotlyOutput("map")
-  #            )
-  #          )
-  # ),
   tabPanel("Histograms",
            sidebarLayout(
              sidebarPanel(
