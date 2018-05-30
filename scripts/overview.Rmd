@@ -1,8 +1,5 @@
 ---
-title: "Overview"
-author: "Gg, Honie, Val"
-date: "May 27, 2018"
-output: pdf_document
+
 ---
 
 This App shows data visualizations of the poverty levels across all US states, as well as of the elements that influence the increase/decrease of poverty level in 3 age groups. We show poverty levels measured by two different measurements: the Official Poverty Measurement (Official) and the Supplemental Poverty Measurement (SPM).
@@ -12,10 +9,12 @@ This App shows data visualizations of the poverty levels across all US states, a
 
 * The Supplemental Poverty Measurement (SPM) is released in 2009. The SPM takes into account pretax income, tax credits, and other non-cash benefits, such as food stamp, Earned Income Tax Credit, and other antipoverty programs. When calculating a family's resource, the SPM also subtract expenses (e.g tax liabilities, medical costs) from the family's income. The poverty threshold is calculated using expenditures data on food, clothing, housings, and utilities.
 
-![](../Pict/Summary.png)
+<img src="../Pict/Summary.png" width="600">
+(Source: The Supplemental Poverty Measure, 2016)
 
-#Disadvantages of each measurement
+#Advantages and Disadvantages of each measurement
 ##Official Poverty Measurement
+####Disadvantages
 * Only taking into account pretax income of a family and not the full resources
 
 * Using pretax income without subtracting tax liabilities. This leads to inaccurate measurement of a family's resource.
