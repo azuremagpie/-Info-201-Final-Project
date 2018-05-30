@@ -5,7 +5,7 @@ library(dplyr)
 library(shinythemes)
 
 # Set working directory
-setwd("~/Desktop/INFO_201/Info-201-Final-Project")
+#setwd("~/Desktop/INFO_201/Info-201-Final-Project")
 
 # Load the raw data
 raw_data <- read.csv("data/spm_2016.csv", stringsAsFactors = FALSE)

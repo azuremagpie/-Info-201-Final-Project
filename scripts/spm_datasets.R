@@ -53,6 +53,10 @@ colnames(Official_top_five)[2] <- "Percent Estimate"
 SPM_top_five <- SPM_above_nation_average[1:5, ]
 colnames(SPM_top_five)[2] <- "Percent Estimate"
 
+#change column names of the two datasets
+colnames(SPM_above_nation_average)[2] <- "Percent Estimate"
+colnames(Official_above_nation_average)[2] <- "Percent Estimate"
+
 #Test out the histogram for the SPM_top_five table
 title <- "Supplemental"
 ggplot(data = SPM_top_five,

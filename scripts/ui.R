@@ -2,43 +2,53 @@ library(shiny)
 library(shinythemes)
 library(markdown)
 library(plotly)
-#source("spm_datasets.R")
 
 ui <- navbarPage(theme = shinytheme("superhero"),
   title = "Poverty levels across all US States",
   tabPanel("About this app",
-           fluidPage(     
+           sidebarLayout(
+             sidebarPanel(
+               
+             ), 
+             mainPanel(
                h4("Overview"),
                includeHTML("overview.html")
              )
+           )
            
   ),
-  tabPanel("More histograms",
+  tabPanel("Explore the poverty levels across all US States",
            sidebarLayout(
              sidebarPanel(
-               selectInput("top_five_input", "Select the measurement",
-                           c("Official Poverty Measurement" = "Official_top_five",
-                             "Supplemental Poverty Measurement" = "SPM_top_five")
-               ) 
+               selectInput("top_input", "Select the measurement",
+                           c("Official Poverty Measurement" = "Official",
+                             "Supplemental Poverty Measurement" = "SPM")
+               ),
+               numericInput("num", "Number of states to view:",
+                            value = 4, min = 3, max = 10),
+               selectInput("map_data", "Choose which map to view",
+                           c("Official Percent Estimate" = "offic_perc",
+                            "SPM Percent Estimate" = "spm_perc")
+               )
              ), 
              mainPanel(
-               plotOutput("top_five_output")
+               plotOutput("top_output")
              )
            )
-    
+           
   ),
-  tabPanel("Interactive Maps",
-           sidebarLayout(
-             sidebarPanel(
-               selectInput("map_data", "Choose which map to view",
-                           c("Official Percent Estimate" = "offic_perc", 
-                             "SPM Percent Estimate" = "spm_perc"))
-             ),
-             mainPanel(
-               plotlyOutput("map")
-             )
-           )
-  ),
+  # tabPanel("Interactive Maps",
+  #          sidebarLayout(
+  #             sidebarPanel(
+  #            #   selectInput("map_data", "Choose which map to view",
+  #            #               c("Official Percent Estimate" = "offic_perc",
+  #            #                 "SPM Percent Estimate" = "spm_perc"))
+  #             ),
+  #            mainPanel(
+  #              plotlyOutput("map")
+  #            )
+  #          )
+  # ),
   tabPanel("Histograms",
            sidebarLayout(
              sidebarPanel(
