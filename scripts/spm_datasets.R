@@ -55,11 +55,17 @@ colnames(SPM_top_five)[2] <- "Percent Estimate"
 
 #Test out the histogram for the SPM_top_five table
 
-plot_ly(SPM_top_five, x = ~State, y = ~`Percent Estimate`, 
-             type = 'bar', text = text,
-             marker = list(color = 'rgb(158,202,225)',
-                           line = list(color = 'rgb(8,48,107)',
-                                       width = 1.5))) %>%
-  layout(title = "January 2013 Sales Report",
-         xaxis = list(title = ""),
-         yaxis = list(title = ""))
+# plot_ly(SPM_top_five, x = ~State, y = ~`Percent Estimate`, 
+#              type = 'bar', text = text,
+#              marker = list(color = 'rgb(158,202,225)',
+#                            line = list(color = 'rgb(8,48,107)',
+#                                        width = 1.5))) %>%
+#   layout(title = "January 2013 Sales Report",
+#          xaxis = list(title = ""),
+#          yaxis = list(title = ""))
+
+ggplot(data = SPM_top_five,
+       aes(x = State, y = `Percent Estimate` )) +
+  geom_bar(stat = "identity", fill = "pink") +
+  xlab("States") +
+  ylab("Percent Estimate")
