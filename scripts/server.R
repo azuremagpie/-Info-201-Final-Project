@@ -20,9 +20,9 @@ shinyServer(function(input, output) {
   output$top_five_output <- renderPlot({
     title <- function() {
       if(input$top_five_input == 'Official_top_five') {
-        return("Top 5 states with highest poverty level")
+        return("Official Poverty Measurement")
       } else {
-        return(SPM_top_five)
+        return("Supplemental Poverty Measurment")
       }
     }
       
@@ -30,7 +30,10 @@ shinyServer(function(input, output) {
                             aes(x = State, y = `Percent Estimate`)) +
       geom_bar(stat = "identity", fill = "pink") +
       xlab("States") +
-      ylab("Percent Estimate")
+      ylab("Percent Estimate") +
+      ggtitle(paste0("Top 5 states with highest poverty level, according to the ",
+                     title())) +
+      geom_text(aes(label = `Percent Estimate`))
     top_five_hist
   })
   

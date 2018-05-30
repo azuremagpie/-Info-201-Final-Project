@@ -40,7 +40,7 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   tabPanel("Histograms",
            sidebarLayout(
              sidebarPanel(
-               #Put widgets here
+               #Put widgets here (VAL!!!!!!!!)
              ),
              mainPanel(
                #Put the plots here
