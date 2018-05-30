@@ -30,10 +30,12 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   tabPanel("Interactive Maps",
            sidebarLayout(
              sidebarPanel(
-               #Put widgets here
+               selectInput("map_data", "Choose which map to view",
+                           c("Official Percent Estimate" = "offic_perc", 
+                             "SPM Percent Estimate" = "spm_perc"))
              ),
              mainPanel(
-               #Put the map here
+               plotlyOutput("map")
              )
            )
   ),
