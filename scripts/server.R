@@ -57,6 +57,7 @@ shinyServer(function(input, output) {
     top_hist
   })
   
+<<<<<<< HEAD
   #Render the interactive map
   output$map <- renderPlotly({
     if(input$map_data == "offic_perc") {
@@ -65,9 +66,47 @@ shinyServer(function(input, output) {
       return (build_spm_map())
     } 
   })
+=======
+<<<<<<< HEAD
+# Render the interactive map for the "Interactive Map" tab
+# output$map <- renderPlotly({
+#   if(input$map_data == "offic_perc") {
+#     return (build_offic_map())
+#   } else{
+#     return (build_spm_map())
+#   } 
+# })
+
+
+#<<<<<<< HEAD
+  #Render the histogram for the "Histogram" tab
+#=======
+  
+  #Render the histogram for the third tab
+#>>>>>>> 93c263016c986052097b1afec6559aba471905c8
+=======
+  #Render the interactive map for the "Interactive Map" tab
+# output$map <- renderPlotly({
+#     g <- list(
+#       scope = "usa",
+#       projection = list(type = "albers usa"),
+#       showland = TRUE,
+#       lakecolor = toRGB("white")
+#     )
+# 
+#     plot_ly(locations = total_data$state,
+#             z = total_data[,input$map_data],
+#             color = total_data[,input$map_data],
+#             type = "choropleth",
+#             locationmode = "USA-states"
+#     ) %>%
+#       layout(geo = g)
+# })
+>>>>>>> 0640ddc59b6f387f90dd06d6f562cc8f6f9c4d53
 
   
   #Render the histogram for the third tab
+>>>>>>> 3f1b8029b2c94c6a000c865fa6202dae5af8d842
   output$bar <- renderPlot({
     par(mar = c(12.1,10.1,4.1,2.1), mgp = c(8,1,0))
     bar1 <- tapply(add_average[,input$addition], add_average$X, mean)

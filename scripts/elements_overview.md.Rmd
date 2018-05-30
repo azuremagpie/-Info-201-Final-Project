@@ -5,9 +5,6 @@ date: "5/30/2018"
 output: html_document
 ---
 
-<<<<<<< HEAD
-# Additions and Subtraction Elements
-=======
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -15,25 +12,16 @@ knitr::opts_chunk$set(echo = TRUE)
 ## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
->>>>>>> 0640ddc59b6f387f90dd06d6f562cc8f6f9c4d53
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-<<<<<<< HEAD
-### Addition Elements
-=======
 ```{r cars}
 summary(cars)
 ```
->>>>>>> 0640ddc59b6f387f90dd06d6f562cc8f6f9c4d53
 
 ## Including Plots
 
-<<<<<<< HEAD
-### Subtraction Elements
-=======
 You can also embed plots, for example:
->>>>>>> 0640ddc59b6f387f90dd06d6f562cc8f6f9c4d53
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
