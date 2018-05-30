@@ -20,7 +20,10 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   tabPanel("Explore the poverty levels across all US States",
            sidebarLayout(
              sidebarPanel(
-               selectInput("top_input", "Select the measurement",
+               textInput("state_names", 
+                         "Enter state names, capitalize first letter",
+                         value = "Washington"),
+               selectInput("top_input", "Select the measurement for the histogram",
                            c("Official Poverty Measurement" = "Official",
                              "Supplemental Poverty Measurement" = "SPM")
                ),
@@ -32,6 +35,7 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                )
              ), 
              mainPanel(
+               tableOutput("state_percent"),
                textOutput("average"),
                plotOutput("top_output")
              )

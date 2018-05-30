@@ -8,6 +8,13 @@ source("spm_datasets.R", local = FALSE)
 shinyServer(function(input, output) {
   
   #Render for the first tab
+  output$state_percent <- renderTable({
+    result <- state_all_measures %>% 
+      filter(State == input$state_names) %>% 
+      select(everything())
+    result
+  })
+  
   data_used <- function() {
     if(input$top_input == "Official") {
       national_average <- Official_national_average
