@@ -50,24 +50,24 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   #            )
   #          )
   # ),
-  tabPanel("Histograms",
+  tabPanel("Factors included in the SPM that influence Poverty Level",
            sidebarLayout(
              sidebarPanel(
                h3("Addition"),
                selectInput("addition", "Select population to view", 
-                           c("All.people.Estimate",
-                             "Under.18.years.Estimate",
-                             "X18.to.64.years.Estimate",
-                             "X65.years.and.over.Estimate"),  
-                           selected = "All.people.Estimate"
+                           c("All age group" = "All.people.Estimate",
+                             "Under 18 years old" = "Under.18.years.Estimate",
+                             "18 to 64 years old" = "X18.to.64.years.Estimate",
+                             "65 years old and over" = "X65.years.and.over.Estimate"),  
+                           selected = "All age group"
                ),
                h3("Subtraction"),
                selectInput("subtraction", "Select population to view", 
-                           c("All.people.Estimate",
-                             "Under.18.years.Estimate",
-                             "X18.to.64.years.Estimate",
-                             "X65.years.and.over.Estimate"),
-                           selected = "All.people.Estimate"
+                           c("All age group" = "All.people.Estimate",
+                             "Under 18 years old" = "Under.18.years.Estimate",
+                             "18 to 64 years old" = "X18.to.64.years.Estimate",
+                             "65 years old and over" = "X65.years.and.over.Estimate"),
+                           selected = "All age group"
                )
              ),
              mainPanel(

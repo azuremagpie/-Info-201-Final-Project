@@ -69,20 +69,23 @@ shinyServer(function(input, output) {
 # })
 
   
-  #Render the histogram for the "Histogram" tab
+  #Render the histogram for the third tab
   output$bar <- renderPlot({
     par(mar = c(12.1,10.1,4.1,2.1), mgp = c(8,1,0))
     bar1 <- tapply(add_average[,input$addition], add_average$X, mean)
     barplot(bar1, xlab = "Decrease in number of people in poverty",
             ylab = "Elements",
-            main = "Additions Average", horiz = TRUE,
+            main = "Effects of Addition Elements on number of people in poverty",
+            horiz = TRUE,
             las = 1, col = rainbow(12), cex.names = 0.75)
   })        
   output$bar2 <- renderPlot({
     par(mar = c(12.1,10.1,4.1,2.1), mgp = c(8,1,0))
     bar2 <- tapply(subtract_average[,input$subtraction], subtract_average$X, mean)
     barplot(bar2, xlab = "Increase in number of people in poverty",
-            ylab = "Elements",  main = "Subtraction Average", horiz = TRUE,
+            ylab = "Elements", 
+            main = "Effects of Subtraction Elements on number of people in poverty",
+            horiz = TRUE,
             las = 1, col = rainbow(5), cex.names = 0.75)
   })
 })
