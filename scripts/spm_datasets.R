@@ -57,6 +57,12 @@ colnames(SPM_top_five)[2] <- "Percent Estimate"
 colnames(SPM_above_nation_average)[2] <- "Percent Estimate"
 colnames(Official_above_nation_average)[2] <- "Percent Estimate"
 
+#Create another dataframe for reactive output later
+state_all_measures <- percent_estimate %>% 
+  select(State, Official.Percent.Estimate, SPM.Percent.Estimate)
+colnames(state_all_measures)[2] <- "Official Percent Estimate"
+colnames(state_all_measures)[3] <- "SPM Percent Estimate"
+
 #Test out the histogram for the SPM_top_five table
 # title <- "Supplemental"
 # ggplot(data = SPM_top_five,

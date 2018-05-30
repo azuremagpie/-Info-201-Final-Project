@@ -3,11 +3,17 @@ library(plotly)
 library(ggplot2)
 library(knitr)
 source("spm_datasets.R", local = FALSE)
-source("maps.R", local = FALSE)
 
 shinyServer(function(input, output) {
   
   #Render for the first tab
+  output$state_percent <- renderTable({
+    result <- state_all_measures %>% 
+      filter(State == input$state_names) %>% 
+      select(everything())
+    result
+  })
+  
   data_used <- function() {
     if(input$top_input == "Official") {
       national_average <- Official_national_average
@@ -50,6 +56,7 @@ shinyServer(function(input, output) {
     top_hist
   })
   
+<<<<<<< HEAD
 # Render the interactive map for the "Interactive Map" tab
 # output$map <- renderPlotly({
 #   if(input$map_data == "offic_perc") {
@@ -66,6 +73,28 @@ shinyServer(function(input, output) {
   
   #Render the histogram for the third tab
 #>>>>>>> 93c263016c986052097b1afec6559aba471905c8
+=======
+  #Render the interactive map for the "Interactive Map" tab
+# output$map <- renderPlotly({
+#     g <- list(
+#       scope = "usa",
+#       projection = list(type = "albers usa"),
+#       showland = TRUE,
+#       lakecolor = toRGB("white")
+#     )
+# 
+#     plot_ly(locations = total_data$state,
+#             z = total_data[,input$map_data],
+#             color = total_data[,input$map_data],
+#             type = "choropleth",
+#             locationmode = "USA-states"
+#     ) %>%
+#       layout(geo = g)
+# })
+
+  
+  #Render the histogram for the third tab
+>>>>>>> 3f1b8029b2c94c6a000c865fa6202dae5af8d842
   output$bar <- renderPlot({
     par(mar = c(12.1,10.1,4.1,2.1), mgp = c(8,1,0))
     bar1 <- tapply(add_average[,input$addition], add_average$X, mean)

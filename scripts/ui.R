@@ -16,10 +16,18 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                #includeHTML("overview.html")
              )
            )
+<<<<<<< HEAD
 ),
+=======
+           
+  ),
+>>>>>>> 3f1b8029b2c94c6a000c865fa6202dae5af8d842
   tabPanel("Explore the poverty levels across all US States",
            sidebarLayout(
              sidebarPanel(
+               textInput("state_names", 
+                         "Enter state names, capitalize first letter. Then click enter",
+                         value = "Washington"),
                selectInput("top_input", "Select the measurement",
                            c("Official Poverty Measurement" = "Official",
                              "Supplemental Poverty Measurement" = "SPM")
@@ -32,13 +40,14 @@ ui <- navbarPage(theme = shinytheme("superhero"),
                )
              ),
              mainPanel(
+               tableOutput("state_percent"),
                textOutput("average"),
-               plotOutput("top_output"),
-               plotlyOutput("map")
+               plotOutput("top_output")
              )
            )
 
   ),
+<<<<<<< HEAD
   # tabPanel("Interactive Maps",
   #          sidebarLayout(
   #             sidebarPanel(
@@ -51,6 +60,8 @@ ui <- navbarPage(theme = shinytheme("superhero"),
   #            )
   #          )
   # ),
+=======
+>>>>>>> 3f1b8029b2c94c6a000c865fa6202dae5af8d842
   tabPanel("Factors included in the SPM that influence Poverty Level",
            sidebarLayout(
              sidebarPanel(
