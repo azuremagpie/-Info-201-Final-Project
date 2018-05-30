@@ -1,42 +1,18 @@
 ---
-title: "Untitled"
-author: "Honie Moon"
-date: "5/30/2018"
-output: html_document
+
 ---
 
-<<<<<<< HEAD
 # Additions and Subtraction Elements
-=======
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
+For the Supplemental Poverty Measure, the US Census have factored in key elements that supposedly influence the increase/decrease in the number of people in poverty. These elements are divided into 2 categories: 
+* Addition Elements
+* Subtraction Elements
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
->>>>>>> 0640ddc59b6f387f90dd06d6f562cc8f6f9c4d53
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-<<<<<<< HEAD
 ### Addition Elements
-=======
-```{r cars}
-summary(cars)
-```
->>>>>>> 0640ddc59b6f387f90dd06d6f562cc8f6f9c4d53
 
-## Including Plots
+Addition Elements are factors that **increase the resource** of a family or single individual (i.e *put additional money to the available resource*), thus **decrease the number of people in poverty.**
 
-<<<<<<< HEAD
 ### Subtraction Elements
-=======
-You can also embed plots, for example:
->>>>>>> 0640ddc59b6f387f90dd06d6f562cc8f6f9c4d53
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+Subtraction Elements are factors that **decrease the resouce** of a family or single individual (i.e *subtract money from the available resource*), thus **decrease the number of people in poverty.**
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
